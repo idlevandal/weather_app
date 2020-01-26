@@ -9,5 +9,8 @@ Future<Weather> getWeather() async {
   String key = 'ea043012b4277abbb36687d895f26469';
   Response res = await get('https://api.openweathermap.org/data/2.5/weather?id=$cityId&units=metric&APPID=$key');
   var response = jsonDecode(res.body);
-  return Weather.fromJson(response);
+  print(response);
+  Weather x = Weather.fromJson(response);
+//  print(x);
+  return x;
 }

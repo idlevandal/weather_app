@@ -1,4 +1,22 @@
 class Weather {
+//  double longitude;
+//  double latitude;
+//  int weatherTypeId;
+//  String shortDesc;
+//  String longDesc;
+//  String icon;
+//  double temp;
+//  double feelsLike;
+//  int pressure;
+//  int humidity;
+//  num visibility;
+//  double windSpeed;
+//  int windDegrees;
+//  int cityId;
+//  String cityName;
+//  String countryCode;
+//  int sunrise;
+//  int sunset;
   double longitude;
   double latitude;
   int weatherTypeId;
@@ -6,18 +24,17 @@ class Weather {
   String longDesc;
   String icon;
   double temp;
-  int pressure;
-  int humidity;
-  double tempMin;
-  double tempMax;
-  num visibility;
+  double feelsLike;
+  var pressure;
+  var humidity;
+  var visibility;
   double windSpeed;
-  int windDegrees;
+  var windDegrees;
   int cityId;
   String cityName;
   String countryCode;
-  int sunrise;
-  int sunset;
+  var sunrise;
+  var sunset;
 
   Weather({
     this.longitude,
@@ -27,10 +44,9 @@ class Weather {
     this.longDesc,
     this.icon,
     this.temp,
+    this.feelsLike,
     this.pressure,
     this.humidity,
-    this.tempMin,
-    this.tempMax,
     this.visibility,
     this.windSpeed,
     this.windDegrees,
@@ -50,10 +66,9 @@ class Weather {
       longDesc: jsonData['weather'][0]['description'],
       icon: jsonData['weather'][0]['icon'],
       temp: jsonData['main']['temp'],
+      feelsLike: jsonData['main']['feels_like'],
       pressure: jsonData['main']['pressure'],
       humidity: jsonData['main']['humidity'],
-      tempMin: jsonData['main']['temp_min'],
-      tempMax: jsonData['main']['temp_max'],
       visibility: jsonData['visibility'],
       windSpeed: jsonData['wind']['speed'],
       windDegrees: jsonData['wind']['deg'],
