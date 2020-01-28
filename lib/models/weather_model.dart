@@ -19,22 +19,23 @@ class Weather {
 //  int sunset;
   double longitude;
   double latitude;
-  int weatherTypeId;
+  var weatherTypeId;
   String shortDesc;
   String longDesc;
   String icon;
-  double temp;
-  double feelsLike;
+  var temp;
+  var feelsLike;
   var pressure;
   var humidity;
   var visibility;
-  double windSpeed;
+  var windSpeed;
   var windDegrees;
-  int cityId;
+  int dateTimeOfData;
+  var cityId;
   String cityName;
   String countryCode;
-  var sunrise;
-  var sunset;
+  int sunrise;
+  int sunset;
 
   Weather({
     this.longitude,
@@ -50,6 +51,7 @@ class Weather {
     this.visibility,
     this.windSpeed,
     this.windDegrees,
+    this.dateTimeOfData,
     this.cityId,
     this.cityName,
     this.countryCode,
@@ -72,6 +74,7 @@ class Weather {
       visibility: jsonData['visibility'],
       windSpeed: jsonData['wind']['speed'],
       windDegrees: jsonData['wind']['deg'],
+      dateTimeOfData: jsonData['dt'],
       cityId: jsonData['id'],
       cityName: jsonData['name'],
       countryCode: jsonData['sys']['country'],
